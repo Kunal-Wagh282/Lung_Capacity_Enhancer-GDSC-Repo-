@@ -168,10 +168,10 @@ function BleButton({uid,name,age}) {
       {showSuccessPopup && (<PopupMessage message={error}/>)}
       <div className='chart-canvas'>
       <LineGraph time={time} volumePerSecond={volumePerSecond}/>
-      {<h3>Total Volume: {totalVolume} Liters</h3>}
+      {<h3>Total Volume: {totalVolume} Litres</h3>}
          </div>
         </>
     );
 }
-
+  
 export default BleButton;
