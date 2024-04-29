@@ -101,7 +101,7 @@ function DrawerComponent({ isOpen, onClose,setIsDOpen,name}) {
             message="User from History Date"
             required
           />
-            <p>Select from Date</p>
+            <p>Select to Date</p>
             <DateInput
             label="Select  to History Date"
             value={todate}

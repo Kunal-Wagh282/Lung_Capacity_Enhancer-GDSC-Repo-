@@ -132,7 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
       "http://127.0.0.1:5173",
       "http://localhost:5173",
-      "http://172.16.32.241:5173"
+      "http://192.168.29.163:5173"
   ]
 
 DATE_INPUT_FORMATS = ['%Y-%m-%d', ]
