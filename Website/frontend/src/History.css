@@ -85,10 +85,7 @@ h4 {
       border: 0.1rem solid #97dc21;
     }
 
-    .dropdown-select-history:hover {
-        background-color: #97DC21; /* Blue background on hover */
-        color: #ffffff;
-      }
+    
     
    
     /* Style for the dropdown options */

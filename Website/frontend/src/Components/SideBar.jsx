@@ -77,13 +77,18 @@ function SideBar({ name }) { // Receive `name` prop here
           </Link>
 
           {/* Link to Menu item 3 route */}
-          <div className="sidebar-position" onClick={() => setIsDOpen(true)} >
+          {/* <div className="sidebar-position" onClick={() => setIsDOpen(true)} >
           
             <DrawerComponent isOpen={isDOpen} onClose={() => setIsDOpen(false)} setIsDOpen={setIsDOpen} name={nowName}/>
 
             <FontAwesomeIcon icon={faFileArchive} />
             <span>Generate Report</span>
-            </div>
+            </div> */}
+
+            <Link to="/try2" className="sidebar-position">
+            <FontAwesomeIcon icon={faFileArchive} />
+            <span>Generate Analysis</span>
+          </Link>
 
           {/* Link to Logout */}
           <Link to="/login" className="sidebar-position">

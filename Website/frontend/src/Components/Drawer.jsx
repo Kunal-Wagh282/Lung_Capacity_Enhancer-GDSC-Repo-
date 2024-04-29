@@ -21,7 +21,6 @@ function DrawerComponent({ isOpen, onClose, newChildUsername, setNewChildUsernam
             value={newChildDOB}
             onChange={(e) => setNewChildDOB(e.target.value)}
             variant="outlined"
-           
             margin="normal"
             InputLabelProps={{
               shrink: true,

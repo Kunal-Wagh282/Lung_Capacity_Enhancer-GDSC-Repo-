@@ -33,7 +33,6 @@ function DrawerComponent({ isOpen, onClose,setIsDOpen,name}) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const nowName = JSON.parse(sessionStorage.getItem('nowName'));
-      
         try {
             setLoading(true);
             const response = await axios.post(`${API_URL}/generate-report/`, {
@@ -48,6 +47,7 @@ function DrawerComponent({ isOpen, onClose,setIsDOpen,name}) {
             } else {
                 // If response contains the PDF file
                 // Create a Blob object from the received binary data
+                
                 const blob = new Blob([response.data], { type: 'application/pdf' });
 
                 // Create a temporary URL for the Blob object
@@ -101,7 +101,7 @@ function DrawerComponent({ isOpen, onClose,setIsDOpen,name}) {
             message="User from History Date"
             required
           />
-            <p>Select to Date</p>
+            <p>Select from Date</p>
             <DateInput
             label="Select  to History Date"
             value={todate}
@@ -114,7 +114,6 @@ function DrawerComponent({ isOpen, onClose,setIsDOpen,name}) {
         </form>
         </div>
       </Drawer>
-      
     </div>
   );
 }

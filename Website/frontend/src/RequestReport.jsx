@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, {useEffect} from "react";
+import DateInput from './Components/DateInput'
 import DrawerComponent from "./Components/Drawer2";
 function RequestReport() {
     return (
@@ -10,8 +10,8 @@ function RequestReport() {
       );
 
 
+
+
+
     }
-
-
-
 export default  RequestReport;

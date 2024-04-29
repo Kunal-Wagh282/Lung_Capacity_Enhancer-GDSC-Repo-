@@ -4,11 +4,10 @@ import { useLocation, useNavigate ,Link} from 'react-router-dom';
 import './ProfilePage.css'; 
 import API_URL from './config'; // Import the API URL
 import PopupMessage from './Components/PopupMessage';
-import BleButton from './Components/BleButton';
 import Sidebar from './Components/SideBar'; // Import your modal component
 import DrawerComponent from './Components/Drawer'; 
 import { Navbar } from './Components/Navbar';
-
+import LineGraph from './Components/LineGraph';
 
 
 function ProfilePage() {
@@ -25,10 +24,145 @@ function ProfilePage() {
   const [profiles, setProfiles] = useState(userData.profile);
   const [uid, setUid] = useState(userData.u_id);
   const [selectedProfileName, setSelectedProfileName] = useState(profiles.find(profile => profile.uid === profiles.uid).p_name);
+  const [isConnected, setIsConnected] = useState(false);
+  const [device, setDevice] = useState(null);
+  const [time, setTime] = useState([0.00]);
+  const [volumePerSecond, setVolumePerSecond] = useState([0.00]);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false); // State to control the visibility of success popup
+  const [characteristic, setCharacteristic] = useState(null);
+  const [server, setServer] = useState(null);
+  const [service, setService] = useState(null);
+  const [totalVolume, setTotalVolume] = useState(0);
+  
 // const uid = userData.u_id;
 // const profiles = userData.profile;
 // const username = userData.username;
 // const password = userData.password;
+
+const connectToDevice = async () => {
+  try {
+    const device = await navigator.bluetooth.requestDevice({
+      filters:[{name:'LCE'}],
+      optionalServices: ['0000fffe-0000-1000-8000-00805f9b34fb']
+    });
+    setDevice(device);
+
+    const server = await device.gatt.connect();
+    setServer(server);
+
+    device.addEventListener('gattserverdisconnected', onDisconnected);
+
+    if (device.gatt.connected) {
+      setShowSuccessPopup(true);
+      setError('Bluetooth Connected Successfully to:'+device.name);
+      setTimeout(() => setShowSuccessPopup(false), 3000);
+      setIsConnected(true)
+      const service = await server.getPrimaryService('0000fffe-0000-1000-8000-00805f9b34fb');
+      setService(service);
+      const characteristic = await service.getCharacteristic('0000fffc-0000-1000-8000-00805f9b34fb');
+      setCharacteristic(characteristic);
+      await characteristic.startNotifications();
+      characteristic.addEventListener('characteristicvaluechanged', handleCharacteristicValueChanged);
+      if(age<10){var data=String('0'+age);}
+      else{var data = String(age);}
+      console.log(data);
+      await characteristic.writeValue(new TextEncoder().encode(data));
+      
+    } else {
+      console.error('Device disconnected.');
+      //alert('Device disconnected1')
+    }
+  } catch (error) {
+    console.log(error)
+  }
+};
+
+const handleCharacteristicValueChanged = (event) => {
+  const value = event.target.value;
+  const decoder = new TextDecoder('utf-8');
+  const stringValue = decoder.decode(value);
+  const [receivedTime, receivedVolume] = stringValue.split(',').map(parseFloat);
+  setTime(prevTime => [...prevTime, receivedTime]);
+  setVolumePerSecond(prevVolume => [...prevVolume, receivedVolume]); 
+};
+
+useEffect(()=>{
+  if(isConnected) {
+    const sendData = async () => {
+      try{
+        if(selectedProfileAge<10){
+          var data=String('0'+selectedProfileAge);
+        }else{
+        var data = String(selectedProfileAge);}
+       
+        await characteristic.writeValue(new TextEncoder().encode(data));         
+      }
+      catch(error){       
+      }
+}
+sendData(); // Invoke the async function to execute
+}
+},[selectedProfileName]);
+  useEffect(() => {
+      if (time.length!==1 && time[time.length - 1] === 0 ) {
+    time.pop();
+    volumePerSecond.pop();
+    while( time[time.length - 1]===time[time.length - 2]){
+      time.pop();
+      volumePerSecond.pop();
+    }
+    const sendData = async () => { // Define async function
+      setError('');
+      try {
+        const response = await axios.post(`${API_URL}/graph-data/`, {
+          u_id:uid,
+          p_name:selectedProfileName,
+          time_array: time,
+          volume_array: volumePerSecond
+        });
+        if (response.status === 201) {
+          setShowSuccessPopup(true);
+          setError('Data shared successfully!!');
+          setTimeout(() => setShowSuccessPopup(false), 3000);
+        }
+        setTotalVolume(response.data["area"]);
+      } catch (error) {
+        console.error('Error sending data:', error);
+      }
+    setTime([0.00]);
+    setVolumePerSecond([0.00]);
+    };
+    sendData(); // Invoke the async function to execute
+  }
+  },[time]);    
+
+
+  const disconnectDevice = async () => {
+    try {
+      if (device && device.gatt.connected) {
+        await device.gatt.disconnect();
+        setDevice(null);
+        setTime([0.00]);
+        setServer(null);
+        setService(null);
+        setVolumePerSecond([0.00]);
+        setIsConnected(false);
+      }
+    } catch (error) {
+      console.error('Error disconnecting from device:', error);
+    }
+  };
+  const onDisconnected = (event) => {
+    alert("Device Disconnected");
+    setDevice(null);
+    setServer(null);
+    setService(null);
+    setTime([0.00]);
+    setVolumePerSecond([0.00]);
+    setIsConnected(false);
+  };
+
+
 
 useEffect(() => {
   sessionStorage.setItem('nowName', JSON.stringify(selectedProfileName));
@@ -165,25 +299,30 @@ useEffect(() => {
       
       
       {successMessage && <PopupMessage message={errorMessage} />}
-
-      <div className='bluetooth-container'  style={{
-        alignContent: 'center',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flex: 1,
-        maxWidth: '400px',
-        maxHeight: '200px',
-        margintop: '0px',
-        marginleft: '120px',
-        padding: '10px',
-        border: '1px solid #ccc',
-        borderRadius: '20px',
-        backgroundColor: '#f9f9f9',
-        textAlign: 'center',
-        backgroundColor: 'rgba(255, 255, 255, 0.6)'
-}}>
-      <BleButton uid={uid} name={selectedProfileName} age={selectedProfileAge}/><br/>
       
+      <div className='bluetooth-container'>
+
+      {/* <BleButton uid={uid} name={selectedProfileName} age={selectedProfileAge}/><br/> */}
+        <div className='bt-buttons'>
+            <h5>Bluetooth Connection</h5>
+            <button className="bluetooth-button" onClick={connectToDevice} disabled={isConnected}>
+                Connect
+            </button>
+            <button className="bluetooth-button" onClick={disconnectDevice} disabled={!isConnected}>
+                Disconnect
+            </button>
+            <br></br>
+            {device && <h6>Status: Connected to: {device.name}</h6>}
+            
+            {!device && <h6>Status: Disconnected</h6>}
+            </div>
+      {showSuccessPopup && (<PopupMessage message={error}/>)}
+      </div>
+      
+      
+      <div className='chart-canvas'>
+      <LineGraph time={time} volumePerSecond={volumePerSecond}/>
+      {<h3>Total Volume: {totalVolume} Liters</h3>}
       </div>
      </div>
     <Sidebar name={selectedProfileName}/>

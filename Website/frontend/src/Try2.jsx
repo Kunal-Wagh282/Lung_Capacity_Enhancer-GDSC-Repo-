@@ -14,7 +14,7 @@ function History() {
   const [successMessage, setSuccessMessage] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [selectedProfileAge, setSelectedProfileAge] = useState(null);
-  const [addingChildUser, setAddingChildUser] = useState(false);
+  
   const userDataString = sessionStorage.getItem('userData');
   const userData = JSON.parse(userDataString);
   const [profiles, setProfiles] = useState(userData.profile);
@@ -23,6 +23,12 @@ function History() {
   const [dob, setDOB] = useState('');
   const [loading, setLoading] = useState(false);
   const [responseData, setResponseData] = useState([]);
+  const [fromdate, setFromDate] = useState('');
+  const [todate, setToDate] = useState('');
+  const [average_time_array, setaverage_time_array] = useState([]);
+  const [date_array, setdate_array] = useState([]);
+
+
 
   const calculateAge = (dob) => {
     const dobDate = new Date(dob);
@@ -35,28 +41,6 @@ function History() {
     return age;
   };
 
-
-  const fetchData = async () => {
-   
-    try {
-      const response = await axios.post(`${API_URL}/get-graph-data/`, {
-        u_id: uid,
-        p_name: selectedProfileName,
-        date: dob,
-      });
-      if (response.status === 200) {
-        setResponseData(response.data);
-        console.log(response.data)
-      }
-      if (response.status === 204) {
-        alert(`No data found` )
-        console.log("No data found");
-      }
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-
   const handleProfileChange = (e) => {
     e.preventDefault();
     const selectedProfile = profiles.find(profile => profile.p_name === e.target.value);
@@ -64,18 +48,21 @@ function History() {
     setSelectedProfileName(e.target.value);
     sessionStorage.setItem('nowName', JSON.stringify(e.target.value));
     // const nowName=JSON.parse(sessionStorage.getItem('nowName'));
+    console.log('from date',fromdate);
+    console.log('to date',todate);
   };
 
   const renderCharts = () => {
-    return responseData.map((entry, index) => (
-      <div key={index} className="chart-container">
-        <h3>Graph entry {index + 1}</h3>
+    
+    return (
+      <div  className="chart-container">
+        <h3>Analysis</h3>
         <Line
           data={{
-            labels: entry.time_array,
+            labels:date_array ,
             datasets: [{
-              label: 'Volume',
-              data: entry.volume_array,
+              label: 'Dates',
+              data: average_time_array,
               borderColor: '#97dc21',
               fill: true
             }]
@@ -85,36 +72,53 @@ function History() {
               x: {
                 title:{
                   display: true,
-                    text: 'Time'
+                    text: 'Average Time'
                 }
               },
               y: {
                 title:{
                   display: true,
-                    text: 'Volume'
+                    text: 'Timeline'
                 }
               }
             }
           }}
         />
       </div>
-    ));
+    );
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
-    setLoading(true);
+    const nowName = JSON.parse(sessionStorage.getItem('nowName'));
     try {
-      await fetchData();
-    } catch (error) {
-      setErrorMessage('Error fetching data');
-      setSuccessMessage(true);
-      setTimeout(() => setSuccessMessage(false), 3000);
-    } finally {
-      setLoading(false);
+        setLoading(true);
+        const response = await axios.post(`${API_URL}/generate-report/`, {
+            u_id: userData.u_id,
+            p_name: nowName,
+            from_date: fromdate,
+            to_date: todate,
+        });
+        if (response.status === 204) {
+            alert(`No data found` );
+        } 
+        if(response.status === 200) {
+          setResponseData(response.data);
+          setdate_array(response.data[0].date_array);
+          setaverage_time_array(response.data[0].average_time_array);
+          
+        }
+    } 
+    catch (error) {
+        console.log("Error fetching data:", error);
+        
     }
-  };
+    finally{
+        setLoading(false);
+        setFromDate('');
+        setToDate('');
+    }
+};
 
   return (
     <>
@@ -133,19 +137,29 @@ function History() {
           </div>
         )}
         <br/><br/>
-        <h4>Select date to get history</h4>
-        
-        <form className='historyForm' onSubmit={handleSubmit}>
+        <h2>Select dates to get analysis</h2>
+      
+          <form className='historyForm2' onSubmit={handleSubmit}>
+            <p>Select from Date</p>
           <DateInput
-            label="Select History Date"
-            value={dob}
-            onChange={(e) => setDOB(e.target.value)}
-            id="dob"
-            message="User History Date"
+            label="Select from History Date"
+            value={fromdate}
+            onChange={(e) => setFromDate(e.target.value)}
+            id="fromdate"
+            message="User from History Date"
+            required
           />
-          <SubmitButton loading={loading} text="Get History" elseText="Getting..." />
+            <p>Select to Date</p>
+            <DateInput
+            label="Select  to History Date"
+            value={todate}
+            onChange={(e) => setToDate(e.target.value)}
+            id="todate"
+            message="User to History Date"
+            required
+          />    
+          <SubmitButton loading={loading} text="Generate Anaysis" elseText="Analysing..." />
         </form>
-
         {successMessage && <PopupMessage message={errorMessage} />}
       </div>
       <Sidebar name={selectedProfileName} />
