@@ -93,7 +93,7 @@ function RegistrationForm() {
       <div className="form-container">
   
       <form onSubmit={handleSubmit}>
-      <span className="login100-form-title"><h2>Register</h2></span>
+      <span className="login100-form-title"><h1>Register</h1></span>
         <TextInput
           label="Username"
           type="text"

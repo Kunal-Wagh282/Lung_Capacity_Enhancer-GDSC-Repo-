@@ -16,8 +16,8 @@ function App() {
         <Route path="/login" exact element={<LoginForm/>} />
         <Route path="/profiles" element={<ProfilePage/>} />
         <Route path="/history" element={<History/>} />
-        <Route path="/try2" element={<Try2/>} />
-      
+        {/* <Route path="/try2" element={<Try2/>} /> */}
+
         
 
       </Routes>

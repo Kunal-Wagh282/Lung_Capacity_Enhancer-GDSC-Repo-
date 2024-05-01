@@ -47,9 +47,10 @@ h5 {
   }
   
   .chart-canvas {
+
     width: 500px;
     height: 500px;
-    margin: 0 auto;
+    margin-top: 2000px;
     padding: 2rem;
     text-align: center;
   }
@@ -94,7 +95,7 @@ h5 {
   background-color: rgba(255, 255, 255, 0.6);
   }*/
 
-.user-container,
+  .user-container,
 .bluetooth-container  {
   align-content: center;
   justify-content: center;
@@ -163,13 +164,7 @@ h5 {
   pointer-events: none; /* Disable pointer events */
 }
 
-.chart-canvas {
-  position: absolute;
-  top: 80%;
-  left: 47%;
-  transform: translate(-50%, -50%);
-  margin-top: 70px; /* Additional margin from the top if needed */
-}
+
 
 .bt-buttons{
   margin-top: 30px;

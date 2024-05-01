@@ -46,7 +46,6 @@ function History() {
       });
       if (response.status === 200) {
         setResponseData(response.data);
-        console.log(response.data)
       }
       if (response.status === 204) {
         alert(`No data found` )
@@ -119,34 +118,48 @@ function History() {
   return (
     <>
       <div className="history-page-container">
-        <h2>Select User Name</h2>
-        {profiles.length > 0 && (
-          <div>
-            <select className="dropdown-select-history" value={selectedProfileName} onChange={handleProfileChange}>
-              {profiles.map((profile, index) => (
-                <option className="dropdown-option" key={index} value={profile.p_name}>
-                  {profile.p_name}
-                </option>
-              ))}
-            </select>
-            <h3>Age of the User: {(selectedProfileAge === null) ? (setSelectedProfileAge(calculateAge(profiles.find(profile => profile.uid === profiles.uid).p_dob))) : selectedProfileAge}</h3>
+        <div class="container-fluid">
+          <div class="row mt-4 mb-4">
+              <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center justify-content-lg-end">
+                  <h2>Select User Name:- </h2>
+              </div>
+              <div class="col-lg-6 col-sm-12 d-flex mt-5 justify-content-lg-start justify-content-center">
+                  {profiles.length > 0 && (
+                    <div className='select-user'>
+                      <select className="dropdown-select-history" value={selectedProfileName} onChange={handleProfileChange}>
+                        {profiles.map((profile, index) => (
+                          <option className="dropdown-option" key={index} value={profile.p_name}>
+                            {profile.p_name}
+                          </option>
+                        ))}
+                      </select>
+                      <br></br>
+                      <br></br>
+                      <h4>Age of the Selected User is:- {(selectedProfileAge === null) ? (setSelectedProfileAge(calculateAge(profiles.find(profile => profile.uid === profiles.uid).p_dob))) : selectedProfileAge}</h4>
+                    </div>
+                  )}
+              </div>
           </div>
-        )}
-        <br/><br/>
-        <h4>Select date to get history</h4>
-        
-        <form className='historyForm' onSubmit={handleSubmit}>
-          <DateInput
-            label="Select History Date"
-            value={dob}
-            onChange={(e) => setDOB(e.target.value)}
-            id="dob"
-            message="User History Date"
-          />
-          <SubmitButton loading={loading} text="Get History" elseText="Getting..." />
-        </form>
-
-        {successMessage && <PopupMessage message={errorMessage} />}
+          <div class="row mt-5">
+              <br/><br/>
+              <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center justify-content-lg-end mt-4">
+                <h2>Select date to get history:-</h2>
+              </div>
+              <div class="col-lg-6 col-sm-12 d-flex mt-5 justify-content-lg-start justify-content-center">
+                <form className='historyForm' onSubmit={handleSubmit}>
+                  <DateInput
+                    label="Select History Date"
+                    value={dob}
+                    onChange={(e) => setDOB(e.target.value)}
+                    id="dob"
+                    message="User History Date"
+                  />
+                  { <SubmitButton loading={loading} text="Get History" elseText="Getting..." /> }
+                </form>
+              </div>
+          </div>
+         
+          </div>
       </div>
       <Sidebar name={selectedProfileName} />
       {responseData.length > 0 && (
@@ -157,5 +170,4 @@ function History() {
     </>
   );
 }
-
 export default History;

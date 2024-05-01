@@ -5,9 +5,10 @@ import './ProfilePage.css';
 import API_URL from './config'; // Import the API URL
 import PopupMessage from './Components/PopupMessage';
 import Sidebar from './Components/SideBar'; // Import your modal component
-import DrawerComponent from './Components/Drawer'; 
+import DrawerComponent from './Components/AddUserDrawer'; 
 import { Navbar } from './Components/Navbar';
 import LineGraph from './Components/LineGraph';
+
 
 
 function ProfilePage() {
@@ -33,11 +34,11 @@ function ProfilePage() {
   const [server, setServer] = useState(null);
   const [service, setService] = useState(null);
   const [totalVolume, setTotalVolume] = useState(0);
-  
 // const uid = userData.u_id;
 // const profiles = userData.profile;
 // const username = userData.username;
 // const password = userData.password;
+
 
 const connectToDevice = async () => {
   try {
@@ -76,7 +77,6 @@ const connectToDevice = async () => {
     console.log(error)
   }
 };
-
 const handleCharacteristicValueChanged = (event) => {
   const value = event.target.value;
   const decoder = new TextDecoder('utf-8');
@@ -85,6 +85,9 @@ const handleCharacteristicValueChanged = (event) => {
   setTime(prevTime => [...prevTime, receivedTime]);
   setVolumePerSecond(prevVolume => [...prevVolume, receivedVolume]); 
 };
+
+
+
 
 useEffect(()=>{
   if(isConnected) {
@@ -161,8 +164,6 @@ sendData(); // Invoke the async function to execute
     setVolumePerSecond([0.00]);
     setIsConnected(false);
   };
-
-
 
 useEffect(() => {
   sessionStorage.setItem('nowName', JSON.stringify(selectedProfileName));
@@ -272,39 +273,69 @@ useEffect(() => {
     <div>
       <Navbar/>
     </div>
-      <div className='containers'>
-        <div className='user-container'>
-            {profiles.length > 0 && (
-             <div>
-            <select className="dropdown-select" value={selectedProfileName} onChange={handleProfileChange}>
-              {profiles.map((profile, index) => (
-                <option className="dropdown-option" key={index} value={profile.p_name}>
-                  {profile.p_name}   
-                </option>
-              ))}
-            </select>
-          <h6>Age of the selected User: {(selectedProfileAge === null)? (setSelectedProfileAge(calculateAge(profiles.find(profile => profile.uid === profiles.uid).p_dob))):selectedProfileAge}</h6>
-
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center mb-3 mt-4">
+    <div style={{
+        alignContent: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1,
+        maxWidth: '400px',
+        maxHeight: '200px',
+        margintop: '0px',
+        marginleft: '120px',
+        padding: '10px',
+        border: '1px solid #ccc',
+        borderRadius: '20px',
+        backgroundColor: '#f9f9f9',
+        textAlign: 'center',
+        backgroundColor: 'rgba(255, 255, 255, 0.6)',
+        boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)'
+      }}>
+      {profiles.length > 0 && (
+        <div>
+          <select className="dropdown-select" value={selectedProfileName} onChange={handleProfileChange}>
+            {profiles.map((profile, index) => (
+              <option className="dropdown-option" key={index} value={profile.p_name}>
+                {profile.p_name}   
+              </option>
+            ))}
+          </select>
+          <h4>Age of the selected User: {(selectedProfileAge === null)? (setSelectedProfileAge(calculateAge(profiles.find(profile => profile.uid === profiles.uid).p_dob))):selectedProfileAge}</h4>
           <div className='add-delete-button'>
             <button onClick={() => setAddingChildUser(true)}>Add User</button>
-          
             <button onClick={() => deleteChildUser(true)}>Delete User</button>
           </div>
         </div>
       )}
-     </div>
-
-
       <DrawerComponent isOpen={addingChildUser} onClose={() => setAddingChildUser(false)} newChildUsername={newChildUsername} setNewChildUsername={setNewChildUsername} newChildDOB={newChildDOB} setNewChildDOB={setNewChildDOB} handleAddChildUser={handleAddChildUser}/>
-      
-      
       {successMessage && <PopupMessage message={errorMessage} />}
-      
-      <div className='bluetooth-container'>
-
-      {/* <BleButton uid={uid} name={selectedProfileName} age={selectedProfileAge}/><br/> */}
+      </div>
+    </div>
+    
+    <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center mb-3 mt-4 mr-8">
+      <div style={{
+        alignContent: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1,
+        maxWidth: '400px',
+        maxHeight: '200px',
+        margintop: '0px',
+        marginleft: '120px',
+        padding: '10px',
+        border: '1px solid #ccc',
+        borderRadius: '20px',
+        backgroundColor: '#f9f9f9',
+        textAlign: 'center',
+        backgroundColor: 'rgba(255, 255, 255, 0.6)',
+        boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)'
+      }}>
+       
         <div className='bt-buttons'>
-            <h5>Bluetooth Connection</h5>
+            <h3>Bluetooth Connection</h3>
+            <br></br>
             <button className="bluetooth-button" onClick={connectToDevice} disabled={isConnected}>
                 Connect
             </button>
@@ -312,21 +343,34 @@ useEffect(() => {
                 Disconnect
             </button>
             <br></br>
-            {device && <h6>Status: Connected to: {device.name}</h6>}
+            <br></br>
+            {device && <h4>Status: Connected to: {device.name}</h4>}
             
-            {!device && <h6>Status: Disconnected</h6>}
+            {!device && <h4>Status: Disconnected</h4>}
             </div>
       {showSuccessPopup && (<PopupMessage message={error}/>)}
       </div>
-      
-      
-      <div className='chart-canvas'>
-      <LineGraph time={time} volumePerSecond={volumePerSecond}/>
-      {<h3>Total Volume: {totalVolume} Liters</h3>}
       </div>
-     </div>
-    <Sidebar name={selectedProfileName}/>
+      </div>
+      </div>
+
+        <div class="row">
+          <div class="col-12 d-flex align-items-center justify-content-center mt-8">
+            <div className='chart-canvas' >
+                <LineGraph time={time} volumePerSecond={volumePerSecond}/>
+                {<h3>Total Volume: {totalVolume} Liters</h3>}
+            </div>
+          </div>
+        </div>
+   
+  
+
+
+<Sidebar name={selectedProfileName}/>
+
+
     </>
   );
 }
 export default ProfilePage;
+

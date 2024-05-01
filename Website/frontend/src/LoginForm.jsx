@@ -60,7 +60,7 @@ function LoginForm() {
         </div>
       <div className="form-container">
       <form onSubmit={handleSubmit}>
-      <span className="login100-form-title"><h2>Login</h2></span>
+      <span className="login100-form-title"><h1>Login</h1></span>
         <TextInput
           type="text"
           label="Username"
