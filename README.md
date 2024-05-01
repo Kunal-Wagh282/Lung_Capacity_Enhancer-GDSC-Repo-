@@ -25,7 +25,6 @@ A standalone device with dedicated software designed as an interactive game for 
 This folder contains the Arduino code for the Lung Capacity Enhancer device.
 
 ## Installation
-Provide step-by-step instructions on how to install and set up both the Arduino code and the web application.
 1. Clone the repository:
    
        git clone https://github.com/Kunal-Wagh282/Lung_Capacity_Enhancer-GDSC-Repo-
