@@ -4,7 +4,6 @@ import TextInput from './Components/TextInput';
 import DateInput from './Components/DateInput';
 import SubmitButton from './Components/SubmitButton';
 import PopupMessage from './Components/PopupMessage'; // Import the PopupMessage component
-import './RegistrationForm.css'; // Import the CSS file
 import { Link, useNavigate } from 'react-router-dom';
 import API_URL from './config'; // Import the API URL
 import MediTech from './assets/images/Meditech.png';

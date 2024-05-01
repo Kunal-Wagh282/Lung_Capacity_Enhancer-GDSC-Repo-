@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useLocation, useNavigate ,Link} from 'react-router-dom';
-import './ProfilePage.css'; 
+  
 import API_URL from './config'; // Import the API URL
 import PopupMessage from './Components/PopupMessage';
 import Sidebar from './Components/SideBar'; // Import your modal component
@@ -66,7 +65,7 @@ const connectToDevice = async () => {
       characteristic.addEventListener('characteristicvaluechanged', handleCharacteristicValueChanged);
       if(age<10){var data=String('0'+age);}
       else{var data = String(age);}
-      console.log(data);
+      //console.log(data);
       await characteristic.writeValue(new TextEncoder().encode(data));
       
     } else {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './PopupMessage.css'; // Import CSS for styling
+
 
 function PopupMessage({ message }) {
   const [isVisible, setIsVisible] = useState(true);

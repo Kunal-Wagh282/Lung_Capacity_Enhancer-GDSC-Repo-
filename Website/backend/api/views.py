@@ -3,26 +3,15 @@ from datetime import datetime,timedelta
 # Create your views here.
 from django.shortcuts import render, HttpResponse
 from .models import *
-from rest_framework import generics,status
+from rest_framework import status
 from.serializers import*
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from datetime import datetime
-from .ReportGenrator.report_gen import generate_report
+
 import numpy as np
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
-from reportlab.graphics import renderPDF
-from svglib.svglib import svg2rlg
-from io import BytesIO
-import matplotlib.pyplot as plt
-from django.http import HttpResponse
-from io import BytesIO
+
 import pyrebase
-
-
-from reportlab.graphics import renderPM
-
 
 # Create your views here.
 
@@ -43,7 +32,6 @@ database=firebase.database()
 current_date = datetime.today()
 current_date = current_date.strftime("%Y-%d-%m")
 current_date = str(current_date)
-
 
 def get_p_id(u_id):
     while True:

@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { useLocation, useNavigate, Link } from 'react-router-dom';
-import './History.css';
 import API_URL from './config'; // Import the API URL
 import PopupMessage from './Components/PopupMessage';
 import Sidebar from './Components/SideBar'; // Import your modal component
@@ -49,7 +47,7 @@ function History() {
       }
       if (response.status === 204) {
         alert(`No data found` )
-        console.log("No data found");
+        //console.log("No data found");
       }
     } catch (error) {
       console.error("Error fetching data:", error);

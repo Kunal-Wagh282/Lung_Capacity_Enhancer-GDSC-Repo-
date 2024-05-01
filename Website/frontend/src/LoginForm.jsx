@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import TextInput from './Components/TextInput';
 import SubmitButton from './Components/SubmitButton';
-import './LoginForm.css' // Import the CSS file
 import { useNavigate ,Link } from 'react-router-dom';
 import API_URL from './config'; // Import the API URL
 import MediTech from './assets/images/Meditech.png';

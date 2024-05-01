@@ -1,0 +1,840 @@
+/* Style for the dropdown container */
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+body{
+    background-color: white;
+    width: 100vw;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+  }
+  h2  {
+    margin-top: 40px;
+    margin-left: 70px; 
+  }
+  h5 {
+    margin: 3rem 0; /* Add some top margin */
+    margin-bottom: 50px; /* Add margin for spacing */
+    margin-left: 70px;
+    
+  }
+  
+    
+    /* Style for the dropdown select element */
+    .dropdown-select {
+      width: 300px; /* Adjust as needed */
+      font-size: 16px; /* Adjust as needed */
+      margin-left: 0px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      align-self:center ;
+    }
+    
+    .add-delete-button {
+      margin-left: 0px;
+      border-radius: 25px;
+      margin-top: 30px;
+      margin-right: 10px;
+      margin-bottom: 20px;
+    }
+    /* Style for the dropdown options */
+    .dropdown-option {
+      font-weight: bold;
+    }
+    .chart-canvas {
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        padding: 2rem;
+        text-align: center;
+      }
+   
+    .charts-container {
+      width: 90%; /* Adjust width as needed */
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: center;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Display two columns */
+      grid-gap: 20px; /* Optional: Add gap between charts */
+    }
+    
+    .containers {
+      display: flex; /* Use flexbox for layout */
+      gap: 120px; /* Space evenly between the two containers */
+      margin-top: 0px;
+    }
+    /*.user-container{
+       
+      max-width: 400px;
+      max-height: 150px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      background-color: #f9f9f9;
+      text-align: center; 
+      background-color: rgba(255, 255, 255, 0.6);
+      }
+  
+    .bluetooth-container{
+  
+    max-width: 400px;
+    max-height: 150px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    text-align: center; 
+    background-color: rgba(255, 255, 255, 0.6);
+    }*/
+  
+    .user-container,
+  .bluetooth-container  {
+    align-content: center;
+    justify-content: center;
+    align-items:center ;
+    flex: 1; /* Equal width for both containers */
+    max-width: 400px;
+    max-height: 200px;  
+    margin-top: 40px;
+    margin-left: 120px;
+    /*margin: 90px;  Adjust the margin as needed */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    text-align: center; /* Align form elements to center */
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+    
+  .add-delete-button button{
+    border-radius: 10px;
+    gap: 20px;
+    padding: 5px;
+    border: 2px solid #97DC21; /* Blue border */
+    color: #97DC21; /* Blue text */
+    background-color: transparent;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    gap: 20px;
+  }
+  
+  .add-delete-button button:hover {
+    background-color: #97DC21; /* Blue background on hover */
+    color: #ffffff; /* White text on hover */
+  }
+  .bluetooth-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #97DC21; /* Blue border */
+    color: #97DC21; /* Blue text */
+    background-color: transparent;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    gap: 20px;
+  }
+  
+  .bluetooth-button:hover {
+    background-color: #97DC21; /* Blue background on hover */
+    color: #ffffff; /* White text on hover */
+  }
+  
+  .bluetooth-button:active {
+    background-color: #97DC21; /* Darker blue background on click */
+    border-color: #97DC21; /* Darker blue border on click */
+    color: #ffffff; /* White text on click */
+  }
+  
+  .bluetooth-button:disabled {
+    opacity: 0.6; /* Reduce opacity when button is disabled */
+    pointer-events: none; /* Disable pointer events */
+  }
+  
+  
+  
+  .bt-buttons{
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-bottom: 50px;
+  }
+  
+  h5{
+    margin-bottom: 60px;
+    margin-right: 70px;
+  }
+  h6{
+    margin-top: 40px;
+  }
+  
+  .bluetooth-container{
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    max-width: 400px;
+    max-height: 200px;
+    margin-top: 0px;
+    margin-left: 120px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+  }
+  
+  .drawer-content{max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;}
+  
+    nav {
+        background-color: rgb(239, 237, 237);
+        
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        
+      }
+    nav img{
+        width: 170px; /* Adjust the width as needed */
+        height: auto; /* Maintain the original aspect ratio */
+        object-fit: cover; /* Ensure the whole image is visible within the container */
+        margin-left: auto; 
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    .popup-dialog {
+        position: fixed;
+        top: 20px; /* Adjust the top position as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 9999; /* Ensure it appears on top of other elements */
+      }
+      
+      .popup-content {
+        text-align: center;
+      }
+      
+      .popup-content p {
+        margin: 0;
+      }
+      
+      * {
+        box-sizing: border-box;
+      }
+      
+      
+      .App {
+        font-family: sans-serif;
+        font-size: 12px;
+        text-align: center;
+      }
+      
+      .page {
+        width: 100%;
+        height: 100%;
+      }
+      
+      .content {
+        width: calc(100% - 50px);
+        margin-left: auto;
+        padding: 15px;
+        height: 100%;
+        word-break: break-word;
+      }
+      
+      .sidebar {
+        flex: 0 0 200px;
+        position: fixed;
+        top: 0;
+        width: 50px;
+        height: 100%;
+        background-color: #2a363b;
+        transition: width 0.3s ease;
+        border-right: 1px #4d606e solid;
+        padding-top: 15px;
+        display: flex;
+      flex-direction: column;
+      }
+      
+      .sidebar .sidebar-position {
+        height: 50px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+        text-align: left;
+      }
+      
+      .sidebar .sidebar-position:hover {
+        background-color: #15181a;
+        border-right:5px #97dc21;
+      }
+      
+      .sidebar svg {
+        color: #97dc21;;
+        min-width: 25px;
+      }
+      
+      .sidebar span {
+        width: 0;
+        height: 0;
+        padding: 0 15px;
+        transition: width 0.3s ease;
+        color: #c9c9c9;
+        text-transform: uppercase;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      
+      .sidebar--open {
+        width: 250px;
+        transition: width 0.3s ease;
+      }
+      
+      .sidebar--open .sidebar-position span {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      
+      .trigger {
+        height: 50px;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 12px 15px;
+      }
+      
+      /* Sidebar.css */
+      
+      /* Add this CSS to remove the underline from links */
+      .sidebar-position {
+        text-decoration: none; /* Remove underline */
+      }
+      
+      .sidebar-position:hover {
+        text-decoration: none; /* Remove underline on hover */
+      }
+      .sidebar .sidebar-position:last-child {
+        margin-top: auto; /* Push the last item to the bottom */
+      }
+      
+      /* Sidebar.css */
+      
+      .profile-container {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      color: #ffffff;
+      border-bottom: 1px solid #4d606e;
+      text-decoration: none;
+      }
+      
+      
+      
+      
+      .profile {
+      margin-left: 50px;
+      }
+      
+      /* Adjust the padding of the sidebar when the profile section is not displayed */
+      .sidebar:not(.sidebar--open) .profile-container {
+      display: none;
+      }
+      
+      body{
+  background-color: white;
+}
+
+
+/* .history-page-container h2,h3  {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+} */
+
+/* h4 {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  
+  } */
+  /* .historyForm p{
+    text-align: center;
+  } */
+
+  .historyForm input[type="date"]
+  {
+    /* margin-top: 20px;
+    margin-left: 623px;
+    margin-bottom: 0px;
+    align-self:center ; */
+    border-radius: 20px;
+    width: 280px;
+    height: 40px;
+    font-size: 14px; 
+    padding: 5px;
+    border-radius: 15px; 
+    border-color: #97dc21;
+    border: 0.1rem solid #97dc21;
+  }
+  .row button[type="submit"] {
+      border-radius: 25px;
+      align-self: center;
+      width: 200px;
+      height: 40px;
+      font-size: 1.1rem;
+      color: white;
+      font-weight: 700;
+      background: #97DC21;
+      margin-top: 10px;
+      border: 0px;
+      cursor: pointer;
+      /* margin-left: 663px; */
+      transition: opacity 0.25s ease-out;
+      padding: 0; 
+      line-height: 40px; 
+      transition-property: transform ;
+      transition-duration: 0.3s;
+      transition-timing-function: ease;
+      transition-delay: 0s;
+      }
+      form button[type="submit"]:hover{
+          opacity: 0.7s ease-out;
+          transform: scale(1.03);
+        }
+        
+  .col h4{
+    color: #97DC21;
+  }
+
+  
+  .dropdown-select-history {
+    width: 300px; 
+    height: 50px;
+    font-size: 18px; 
+    /* margin-top: 40px; */
+    padding: 5px;
+    /* margin-left: 615px;
+    margin-right: auto; */
+    /* align-self:center ; */
+    border-radius: 15px;
+    border-color: #97dc21;
+    border: 0.1rem solid #97dc21;
+  }
+
+  .dropdown-select-history:hover {
+      background-color: #ffffff; 
+      color:black;
+    }
+  
+ 
+  .dropdown-option {
+    font-weight: bold;
+  }
+  
+  .chart-canvas {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  .charts-container {
+    width: 90%; 
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-gap: 20px; 
+  }
+  
+  .containers {
+    display: flex;
+    gap: 120px; 
+    margin-top: 0px;
+  }
+  
+  body{
+    background-color: white;
+  }
+  
+  
+  /* .history-page-container h2,h3  {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+  } */
+  
+  /* h4 {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    
+    } */
+    /* .historyForm p{
+      text-align: center;
+    } */
+  
+    .historyForm input[type="date"]
+    {
+      /* margin-top: 20px;
+      margin-left: 623px;
+      margin-bottom: 0px;
+      align-self:center ; */
+      border-radius: 20px;
+      width: 280px;
+      height: 40px;
+      font-size: 14px; 
+      padding: 5px;
+      border-radius: 15px; 
+      border-color: #97dc21;
+      border: 0.1rem solid #97dc21;
+    }
+    .row button[type="submit"] {
+        border-radius: 25px;
+        align-self: center;
+        width: 200px;
+        height: 40px;
+        font-size: 1.1rem;
+        color: white;
+        font-weight: 700;
+        background: #97DC21;
+        margin-top: 10px;
+        border: 0px;
+        cursor: pointer;
+        /* margin-left: 663px; */
+        transition: opacity 0.25s ease-out;
+        padding: 0; 
+        line-height: 40px; 
+        transition-property: transform ;
+        transition-duration: 0.3s;
+        transition-timing-function: ease;
+        transition-delay: 0s;
+        }
+        form button[type="submit"]:hover{
+            opacity: 0.7s ease-out;
+            transform: scale(1.03);
+          }
+          
+    .col h4{
+      color: #97DC21;
+    }
+  
+    
+    .dropdown-select-history {
+      width: 300px; 
+      height: 50px;
+      font-size: 18px; 
+      /* margin-top: 40px; */
+      padding: 5px;
+      /* margin-left: 615px;
+      margin-right: auto; */
+      /* align-self:center ; */
+      border-radius: 15px;
+      border-color: #97dc21;
+      border: 0.1rem solid #97dc21;
+    }
+  
+    .dropdown-select-history:hover {
+        background-color: #ffffff; 
+        color:black;
+      }
+    
+   
+    .dropdown-option {
+      font-weight: bold;
+    }
+    
+    .chart-canvas {
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: center;
+    }
+    .charts-container {
+      width: 90%; 
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: center;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); 
+      grid-gap: 20px; 
+    }
+    
+    .containers {
+      display: flex;
+      gap: 120px; 
+      margin-top: 0px;
+    }
+    /* LoginForm.css */
+
+.page-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.color-meanings.com/wp-content/uploads/2022/02/Green-and-white-wave-design.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .login-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 150px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    text-align: center; /* Align form elements to center */
+  }
+  
+  p
+  {
+    font-size: 0.34cm;
+  }
+  .image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-container img {
+    flex: 1;
+    width: 100%;
+    margin-left: 50px;
+  }
+  
+  .form-content {
+    display: flex;
+    width: 100%;
+  }
+  
+  .form-container {
+    flex: 1;
+  }
+  
+  .login-form-container h2 {
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    padding: 1rem 0;
+    margin: 0;
+    cursor: none;
+    font-size: 12px;
+  }
+  
+  .login-form-container label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.5rem;
+    max-width: 100%;
+  }
+  
+  .login-form-container input[type="text"],
+  .login-form-container input[type="password"],
+  .login-form-container input[type="date"] {
+    width: 250px; /* Adjust width to accommodate padding and border */
+    height: 45px;
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.2rem;
+    padding: 1rem; /* Adjust padding as needed */
+    margin-bottom: 0.1rem; /* Adjust margin as needed */
+    background-color: rgba(251, 251, 251, 0);
+    border-radius: 20px;
+    border-color: white; /* Adjust border radius as needed */
+    border: 2px solid white;
+  }
+  
+  DateInput {
+    font-size: 1.3rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  
+  .login-form-container button[type="submit"] {
+    border-radius: 25px;
+    width: 200px;
+    height: 40px;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 700;
+    background: #97dc21;
+    margin-top: 30px;
+    border: 0px;
+    cursor: pointer;
+    /* transition: opacity 0.25s ease-out; */
+    padding: 0; /* Remove padding to ensure consistent height */
+    line-height: 40px; /* Center text vertically */
+  
+    transition-property: transform ;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+  }
+  
+  .login-form-container button[type="submit"]:hover {
+    /* opacity: 0.7; */
+    transform: scale(1.03);
+  }
+   /* RegistrationForm.css */
+
+/* body{
+  
+  font-family: "work sans";
+  background-image: url('https://www.color-meanings.com/wp-content/uploads/2022/02/Green-and-white-wave-design.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+} */
+.registration-page-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.color-meanings.com/wp-content/uploads/2022/02/Green-and-white-wave-design.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .registration-form-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    text-align: center; /* Align form elements to center */
+    background-color: rgba(255, 255, 255, 0.6);
+      }
+      
+      .registration-form-container h2 {
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        padding: 1rem 0;
+        margin: 0;
+        cursor: none;
+        
+        
+      }
+      
+      .registration-form-container label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1.5rem;
+        max-width: 100%;
+      }
+      
+      .image-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .image-container img {
+        flex: 1;
+        width: 100%;
+      }
+      
+      .form-content {
+        display: flex;
+        width: 100%;
+      }
+      .form-container {
+        flex: 1;
+       
+      }
+      .registration-form-container input[type="text"],
+      .registration-form-container input[type="password"],
+      .registration-form-container input[type="date"] {
+        width: 250px; /* Adjust width to accommodate padding and border */
+        height: 45px;
+        box-sizing: border-box;
+        border: none;
+        font-size: 1.2rem;
+        padding: 1rem; /* Adjust padding as needed */
+        margin-bottom: 0.1rem; /* Adjust margin as needed */
+        background-color: rgb(251, 251, 251,0.3);
+        border-radius: 20px;
+        border-color: white; /* Adjust border radius as needed */
+         border: 2px solid white;
+      }
+      
+      DateInput{
+        font-size: 1.3rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+       
+    .registration-form-container button[type="submit"]:hover{
+      /* opacity: 0.7; */
+      transform: scale(1.03);
+    }
+  
+    .registration-form-container button[type="submit"] {
+    border-radius: 25px;
+    width: 200px;
+    height: 40px;
+    font-size: 1.59rem;
+    color: white;
+    font-weight: 700;
+    background: #97DC21;
+    margin-top: 30px;
+    border: 0px;
+    cursor: pointer;
+    /* transition: opacity 0.25s ease-out; */
+    padding: 0; /* Remove padding to ensure consistent height */
+    line-height: 40px; /* Center text vertically */
+  
+    transition-property: transform ;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    }
+      
+     
+  
+   
+    
