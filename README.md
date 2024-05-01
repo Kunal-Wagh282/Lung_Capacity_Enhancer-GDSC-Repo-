@@ -6,10 +6,10 @@ This project consists of an Arduino code for the Lung Capacity Enhancer device a
 - [Problem Statement](#problem-statement)
 - [About Device](#about-device)
 - [Arduino Code (Lung_Capacity_Enhancer)](#arduino-code-lung_capacity_enhancer)
+- [Installation(Website)](#installation-Website)
 - [Web Application (Website)](#web-application-website)
   - [Frontend](#frontend)
   - [Backend](#backend)
-- [Installation](#installation)
 - [Usage](#usage)
 
 
@@ -24,54 +24,63 @@ A standalone device with dedicated software designed as an interactive game for 
 ## Arduino Code (Lung_Capacity_Enhancer)
 This folder contains the Arduino code for the Lung Capacity Enhancer device.
 
+## Installation(Website)
+Provide step-by-step instructions on how to install and set up both the Arduino code and the web application.
+1. Clone the repository:
+   
+   git clone https://github.com/Kunal-Wagh282/Lung_Capacity_Enhancer-GDSC-Repo-
+2. Navigate to the Website directory:
+   
+       cd Website
+
 ## Web Application (Website)
 The web application consists of two parts: frontend and backend.
 
-### Frontend
+## Frontend
 This folder contains the frontend code for the Lung Capacity Enhancer web application.
-## Frontend Features
+### Frontend Features
 
-### Registration Page
+#### Registration Page
 - **User Registration**: Users can register with their username, first name, last name, date of birth, and password. The minimum age requirement for registration is 5 years old.
 
-### Login Page
+#### Login Page
 - **User Login**: Registered users can log in with their username and password, and retrieve their profile information.
 
-### Dashboard
+#### Dashboard
 - **Profile Management**: Users can add, delete, and view their profiles. Each profile has a name and date of birth.
 - **Bluetooth Connection**: Users can establish a Bluetooth connection with the device.
 - **Real-time Graph**: Users can view real-time graph data while blowing into the device.
 
-### History Page
+#### History Page
 - **View Past Data**: Users can view past history data in the form of graphs.
 
-### Analysis Page
+#### Analysis Page
 - **Generate Analysis**: Users can select a range of dates and view analysis reports.
 
 
-#### Prerequisites
+### Prerequisites
 - Node.js installed on your computer
 - Vite installed on your computer
 
-#### Installation
+### Installation
 1. Navigate to the `frontend` directory:
    
-   cd frontend
+       cd frontend
 
 2. Install dependencies:
 
-   npm install
+       npm install
 
-#### Usage
-To run the development server, use the following command:
+### Usage
+   To run the development server, use the following command:
 
-   npm run dev
+    npm run dev
 
-### Backend
+## Backend
 This folder contains the backend code for the Lung Capacity Enhancer web application.
 This is a Django-based backend API that provides various functionalities such as user registration, login, profile management, graph data storage and retrieval, and report generation.
 
-## Features
+### Backend Features
 
 - **User Registration**: Users can register with their username, first name, last name, date of birth, and password. The minimum age requirement for registration is 5 years old.
 - **User Login**: Registered users can log in with their username and password, and retrieve their profile information.
@@ -80,41 +89,41 @@ This is a Django-based backend API that provides various functionalities such as
 - **Graph Data Retrieval**: Users can retrieve their graph data for a specific date and profile.
 - **Report Generation**: Users can generate reports containing their graph data within a specified date range for a particular profile.
 
-## Installation
+### Installation
    
 1. Navigate to the project directory:
    
-   cd backend-api
+       cd backend
    
 
 2. Create a virtual environment (optional but recommended):
    
-   python -m venv env
-   source env/bin/activate  # On Windows, use `env\Scripts\activate`
+       python -m venv env
+       source env/bin/activate  # On Windows, use `env\Scripts\activate`
    
 
 3. Install the required dependencies:
    
-   pip install -r requirements.txt
+       pip install -r requirements.txt
    
 
 4. Set up the Django project:
    
-   python manage.py migrate
+       python manage.py migrate
    
 
-## Usage
+### Usage
 
 1. Start the Django development server:
    
-   python manage.py runserver
+       python manage.py runserver
    
 
 2. The API endpoints can be accessed at `http://localhost:8000/api/`. You can use tools like Postman or cURL to interact with the API.
 
 3. Refer to the `api/urls.py` file for the available endpoints and their corresponding views in `api/views.py`.
 
-## API Endpoints
+### API Endpoints
 
 - `POST /api/register/`: Register a new user.
 - `POST /api/login/`: Log in an existing user.
@@ -126,11 +135,7 @@ This is a Django-based backend API that provides various functionalities such as
 
 
 
-## Installation
-Provide step-by-step instructions on how to install and set up both the Arduino code and the web application.
-1. Clone the repository:
-   
-   git clone https://github.com/Kunal-Wagh282/LCEWEBBACKEND.git
+
 
 ## Usage
 Provide examples and usage instructions for the Lung Capacity Enhancer device and the web application.
