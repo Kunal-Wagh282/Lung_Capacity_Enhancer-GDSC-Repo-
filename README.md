@@ -6,7 +6,7 @@ This project consists of an Arduino code for the Lung Capacity Enhancer device a
 - [Problem Statement](#problem-statement)
 - [About Device](#about-device)
 - [Arduino Code (Lung_Capacity_Enhancer)](#arduino-code-lung_capacity_enhancer)
-- [Installation (Website)](#installation-Website)
+- [Installation](#installation)
 - [Web Application (Website)](#web-application-website)
   - [Frontend](#frontend)
   - [Backend](#backend)
