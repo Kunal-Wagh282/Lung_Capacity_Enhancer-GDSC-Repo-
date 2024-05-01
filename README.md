@@ -28,7 +28,7 @@ This folder contains the Arduino code for the Lung Capacity Enhancer device.
 Provide step-by-step instructions on how to install and set up both the Arduino code and the web application.
 1. Clone the repository:
    
-   git clone https://github.com/Kunal-Wagh282/Lung_Capacity_Enhancer-GDSC-Repo-
+       git clone https://github.com/Kunal-Wagh282/Lung_Capacity_Enhancer-GDSC-Repo-
 2. Navigate to the Website directory:
    
        cd Website
