@@ -24,7 +24,7 @@ A standalone device with dedicated software designed as an interactive game for 
 ## Arduino Code (Lung_Capacity_Enhancer)
 This folder contains the Arduino code for the Lung Capacity Enhancer device.
 
-## Installation(Website)
+## Installation
 Provide step-by-step instructions on how to install and set up both the Arduino code and the web application.
 1. Clone the repository:
    
