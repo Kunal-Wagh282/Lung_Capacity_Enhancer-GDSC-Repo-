@@ -122,51 +122,71 @@ function GenerateAnalysis() {
 
   return (
     <>
-      <div className="container">
-        <h2>Select User Name</h2>
-        {profiles.length > 0 && (
-          <div>
-            <select className="dropdown-select-history" value={selectedProfileName} onChange={handleProfileChange}>
-              {profiles.map((profile, index) => (
-                <option className="dropdown-option" key={index} value={profile.p_name}>
-                  {profile.p_name}
-                </option>
-              ))}
-            </select>
-            <h3>Age of the User: {(selectedProfileAge === null) ? (setSelectedProfileAge(calculateAge(profiles.find(profile => profile.uid === profiles.uid).p_dob))) : selectedProfileAge}</h3>
+      <div className="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 d-flex justify-content-center mb-3">
+              <h2 className="text-center">Select User Name</h2>
+            </div>
+            <div class="col-lg-12 col-sm-12 d-flex align-items-center justify-content-center ml-4">
+              {profiles.length > 0 && (
+                <div>
+                  <div class="col-lg-12 col-sm-12 d-flex align-items-center justify-content-center">
+                  <select className="dropdown-select-history" value={selectedProfileName} onChange={handleProfileChange}>
+                    {profiles.map((profile, index) => (
+                      <option className="dropdown-option" key={index} value={profile.p_name}>
+                        {profile.p_name}
+                      </option>
+                    ))}
+                  </select>
+                  </div>
+                  <div class="col-lg-12 col-sm-12 d-flex align-items-center justify-content-center mt-2">
+                  <h3>Age of the User: {(selectedProfileAge === null) ? (setSelectedProfileAge(calculateAge(profiles.find(profile => profile.uid === profiles.uid).p_dob))) : selectedProfileAge}</h3>
+                </div>
+                </div>
+              )}
+            </div>
+              <br/><br/>
+            <div class="col-lg-12 col-sm-12 d-flex align-items-center justify-content-center">
+              <h2>Select dates to get analysis</h2>
+            </div>
+
+            <div class="col-lg-12 col-sm-12 d-flex align-items-center justify-content-center mt-5">
+                <form className='historyForm2' onSubmit={handleSubmit}>
+                  <p>Select from Date:- </p>
+                <DateInput
+                  label="Select from History Date"
+                  value={fromdate}
+                  onChange={(e) => setFromDate(e.target.value)}
+                  id="fromdate"
+                  message="User from History Date"
+                  required
+                />
+                <br></br>
+                <br></br>
+                  <p>Select to Date:-</p>
+                  <DateInput
+                  label="Select  to History Date"
+                  value={todate}
+                  onChange={(e) => setToDate(e.target.value)}
+                  id="todate"
+                  message="User to History Date"
+                  required
+                /> 
+                <br></br> 
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                  <SubmitButton loading={loading} text="Generate Anaysis" elseText="Analysing..." />
+                </div>
+              </form>
+            </div>
+              {successMessage && <PopupMessage message={errorMessage} />}
           </div>
-        )}
-        <br/><br/>
-        <h2>Select dates to get analysis</h2>
-      
-          <form className='historyForm2' onSubmit={handleSubmit}>
-            <p>Select from Date</p>
-          <DateInput
-            label="Select from History Date"
-            value={fromdate}
-            onChange={(e) => setFromDate(e.target.value)}
-            id="fromdate"
-            message="User from History Date"
-            required
-          />
-            <p>Select to Date</p>
-            <DateInput
-            label="Select  to History Date"
-            value={todate}
-            onChange={(e) => setToDate(e.target.value)}
-            id="todate"
-            message="User to History Date"
-            required
-          />    
-          <SubmitButton loading={loading} text="Generate Anaysis" elseText="Analysing..." />
-        </form>
-        {successMessage && <PopupMessage message={errorMessage} />}
       </div>
-      <Sidebar name={selectedProfileName} />
-      {responseData.length > 0 && (
-        <div className="charts-container">
-          {renderCharts()}
-        </div>
+            <Sidebar name={selectedProfileName} />
+            {responseData.length > 0 && (
+              <div className="charts-container">
+                {renderCharts()}
+              </div>
+        
       )}
     </>
   );

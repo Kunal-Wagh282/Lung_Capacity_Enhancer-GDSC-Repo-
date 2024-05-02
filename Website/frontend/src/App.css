@@ -14,11 +14,11 @@ body{
   }
   h2  {
     margin-top: 40px;
-    margin-left: 70px; 
+    /* margin-left: 70px;  */
   }
   h5 {
     margin: 3rem 0; /* Add some top margin */
-    margin-bottom: 50px; /* Add margin for spacing */
+    /* margin-bottom: 50px;  */
     margin-left: 70px;
     
   }
@@ -387,6 +387,22 @@ body{
   } */
 
   .historyForm input[type="date"]
+  {
+    /* margin-top: 20px;
+    margin-left: 623px;
+    margin-bottom: 0px;
+    align-self:center ; */
+    border-radius: 20px;
+    width: 280px;
+    height: 40px;
+    font-size: 14px; 
+    padding: 5px;
+    border-radius: 15px; 
+    border-color: #97dc21;
+    border: 0.1rem solid #97dc21;
+  }
+
+  .historyForm2 input[type="date"]
   {
     /* margin-top: 20px;
     margin-left: 623px;

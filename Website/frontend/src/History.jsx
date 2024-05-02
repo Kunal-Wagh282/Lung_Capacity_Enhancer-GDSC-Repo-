@@ -118,10 +118,10 @@ function History() {
       <div className="history-page-container">
         <div class="container-fluid">
           <div class="row mt-4 mb-4">
-              <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center justify-content-lg-end">
+              <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center justify-content-lg-end mb-lg-5 ">
                   <h2>Select User Name:- </h2>
               </div>
-              <div class="col-lg-6 col-sm-12 d-flex mt-5 justify-content-lg-start justify-content-center">
+              <div class="col-lg-6 col-sm-12 d-flex mt-5 justify-content-lg-start justify-content-center mt-4">
                   {profiles.length > 0 && (
                     <div className='select-user'>
                       <select className="dropdown-select-history" value={selectedProfileName} onChange={handleProfileChange}>
@@ -133,17 +133,19 @@ function History() {
                       </select>
                       <br></br>
                       <br></br>
+                      <div class="col-12 d-flex justify-content-center ">
                       <h4>Age of the Selected User is:- {(selectedProfileAge === null) ? (setSelectedProfileAge(calculateAge(profiles.find(profile => profile.uid === profiles.uid).p_dob))) : selectedProfileAge}</h4>
+                      </div>
                     </div>
                   )}
               </div>
           </div>
           <div class="row mt-5">
               <br/><br/>
-              <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center justify-content-lg-end mt-4">
+              <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center justify-content-lg-end mb-lg-5">
                 <h2>Select date to get history:-</h2>
               </div>
-              <div class="col-lg-6 col-sm-12 d-flex mt-5 justify-content-lg-start justify-content-center">
+              <div class="col-lg-6 col-sm-12 d-flex mt-5 justify-content-lg-start justify-content-center mt-5">
                 <form className='historyForm' onSubmit={handleSubmit}>
                   <DateInput
                     label="Select History Date"
@@ -152,7 +154,9 @@ function History() {
                     id="dob"
                     message="User History Date"
                   />
+                  <div class="col-12 d-flex justify-content-center">
                   { <SubmitButton loading={loading} text="Get History" elseText="Getting..." /> }
+                  </div>
                 </form>
               </div>
           </div>
