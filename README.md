@@ -81,7 +81,7 @@ This folder contains the frontend code for the Lung Capacity Enhancer web applic
 
        npm install
 
-### Usage
+### Frontent Usage
    To run the development server, use the following command:
 
     npm run dev
@@ -122,7 +122,7 @@ This is a Django-based backend API that provides various functionalities such as
        python manage.py migrate
    
 
-### Usage
+### Backend Usage
 
 1. Start the Django development server:
    
@@ -145,22 +145,20 @@ This is a Django-based backend API that provides various functionalities such as
 
 
 ## Usage
-Provide examples and usage instructions for the Lung Capacity Enhancer device and the web application.
 
 ### Lung Capacity Enhancer Device
 
 1. **Setup Device**
-   - Connect the Lung Capacity Enhancer device to a power source.
    - Turn on the device using the power button.
 
-2. **Connect Device to Web Application**
+2. **Connect Device to Web or Mobile Application**
    - Open the web application on your computer or mobile device.
    - Go to the Dashboard.
    - Click on the "Bluetooth Connection" button to establish a Bluetooth connection with the device.
 
 3. **Start Lung Capacity Enhancement**
    - Instruct the user to blow into the device as hard as possible for the duration of the game.
-   - The user's lung capacity will be measured and displayed in real-time on the web application.
+   - The user's lung capacity will be measured and displayed in real-time on the web/mobile application.
 
 4. **View History and Analysis**
    - Users can view past history data
@@ -168,4 +166,8 @@ Provide examples and usage instructions for the Lung Capacity Enhancer device an
 ## Deployed Website URL
 
 [Access Lung Capacity Enhancer Website](https://lcefrontend.as.r.appspot.com/)
+
+
+### Download APK
+You can download the APK for the Lung Capacity Enhancer Android app from the [repository](https://github.com/Kunal-Wagh282/Lung_Capacity_Enhancer-GDSC-Repo-/blob/main/LCE_Flutter_app.apk).
 
