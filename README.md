@@ -10,6 +10,8 @@ This project consists of an Arduino code for the Lung Capacity Enhancer device a
 ## Table of Contents
 - [Problem Statement](#problem-statement)
 - [About Device](#about-device)
+- [Deployed Website URL](#deployed-website-url)
+- [Download APK](#download-apk)
 - [Arduino Code (Lung_Capacity_Enhancer)](#arduino-code-lung_capacity_enhancer)
 - [Installation](#installation)
 - [Web Application (Website)](#web-application-website)
@@ -17,8 +19,7 @@ This project consists of an Arduino code for the Lung Capacity Enhancer device a
   - [Backend](#backend)
 - [Usage](#usage)
   - [Lung Capacity Enhancer Device](#lung-capacity-enhancer-device)
-- [Deployed Website URL](#deployed-website-url)
-- [Download APK](#download-apk)
+
 
 ## Problem Statement
 In India, pediatric respiratory care poses significant challenges, encompassing healthcare, emotional well-being, and practical considerations, and these challenges have intensified further following the COVID-19 pandemic. Traditional methods lack sufficient user engagement, often resulting in non-compliance among young patients facing respiratory challenges. The current landscape also faces issues of cost-effectiveness, hindering widespread access to effective treatment. Hygiene concerns in healthcare settings further amplify the need for innovative solutions that prioritize cleanliness and portability. Emotional support for pediatric patients during respiratory treatments is often overlooked. Considering these multifaceted challenges, there is a pressing need for a comprehensive and user-centric solution that not only addresses clinical efficacy but also factors in cost-effectiveness, hygiene standards, and emotional well-being. A portable device that combines sensor technology, gamification for enhanced user engagement, cost-effective components, and a focus on hygiene would significantly contribute to overcoming the existing barriers in pediatric respiratory care in India.
@@ -27,6 +28,15 @@ In India, pediatric respiratory care poses significant challenges, encompassing 
 A standalone device with dedicated software designed as an interactive game for children and adults to enhance their lung capacity, especially those suffering from respiratory issues.
 ![Device Image](media/Device.png)
 ![Device Image](media/HighLevelDesign.png)
+
+
+## Deployed Website URL
+
+[Access Lung Capacity Enhancer Website](https://lcefrontend.as.r.appspot.com/)
+
+
+## Download APK
+You can download the APK for the Lung Capacity Enhancer Android app from the [repository](https://github.com/Kunal-Wagh282/Lung_Capacity_Enhancer-GDSC-Repo-/blob/main/LCE_Flutter_app.apk).
 
 ## Arduino Code (Lung_Capacity_Enhancer)
 This folder contains the Arduino code for the Lung Capacity Enhancer device.
@@ -163,11 +173,5 @@ This is a Django-based backend API that provides various functionalities such as
 4. **View History and Analysis**
    - Users can view past history data
 
-## Deployed Website URL
 
-[Access Lung Capacity Enhancer Website](https://lcefrontend.as.r.appspot.com/)
-
-
-## Download APK
-You can download the APK for the Lung Capacity Enhancer Android app from the [repository](https://github.com/Kunal-Wagh282/Lung_Capacity_Enhancer-GDSC-Repo-/blob/main/LCE_Flutter_app.apk).
 
