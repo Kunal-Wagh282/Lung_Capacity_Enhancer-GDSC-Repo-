@@ -162,5 +162,5 @@ Provide examples and usage instructions for the Lung Capacity Enhancer device an
 
 ## Deployed Website URL
 
-[Access Lung Capacity Enhancer Website](http://your-deployed-website-url.com)
+[Access Lung Capacity Enhancer Website](https://lcefrontend.as.r.appspot.com/)
 
