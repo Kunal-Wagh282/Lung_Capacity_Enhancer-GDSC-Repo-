@@ -48,21 +48,21 @@ This folder contains the frontend code for the Lung Capacity Enhancer web applic
 
 #### Registration Page
 - **User Registration**: Users can register with their username, first name, last name, date of birth, and password. The minimum age requirement for registration is 5 years old.
-  ![Device Image](images/Register.png)
+  ![Device Image](media/Register.png)
 
 #### Login Page
 - **User Login**: Registered users can log in with their username and password, and retrieve their profile information.
-  ![Device Image](images/Login.png)
+  ![Device Image](media/Login.png)
 
 #### Dashboard
 - **Profile Management**: Users can add, delete, and view their profiles. Each profile has a name and date of birth.
 - **Bluetooth Connection**: Users can establish a Bluetooth connection with the device.
 - **Real-time Graph**: Users can view real-time graph data while blowing into the device.
-  ![Device Image](images/Dashboard.png)
+  ![Device Image](media/Dashboard.png)
 
 #### History Page
 - **View Past Data**: Users can view past history data in the form of graphs.
-  ![Device Image](images/History.png)
+  ![Device Image](media/History.png)
 
 #### Analysis Page
 - **Generate Analysis**: Users can select a range of dates and view analysis reports.
