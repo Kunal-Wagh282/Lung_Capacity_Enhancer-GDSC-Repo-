@@ -1,8 +1,12 @@
 # Lung Capacity Enhancer
 
-This project consists of an Arduino code for the Lung Capacity Enhancer device and a web application with separate frontend and backend.
+
 [![Watch the video](media/preview.png)](https://youtu.be/HmlENw9kQTE)
 
+
+
+
+This project consists of an Arduino code for the Lung Capacity Enhancer device and a web application with separate frontend and backend.
 ## Table of Contents
 - [Problem Statement](#problem-statement)
 - [About Device](#about-device)
