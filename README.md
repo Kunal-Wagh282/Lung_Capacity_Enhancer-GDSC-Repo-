@@ -1,7 +1,7 @@
 # Lung Capacity Enhancer
 
 This project consists of an Arduino code for the Lung Capacity Enhancer device and a web application with separate frontend and backend.
-[![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://youtu.be/HmlENw9kQTE)
+[![Watch the video](https://youtu.be/HmlENw9kQTE)](https://youtu.be/HmlENw9kQTE)
 ## Table of Contents
 - [Problem Statement](#problem-statement)
 - [About Device](#about-device)
@@ -20,8 +20,8 @@ In India, pediatric respiratory care poses significant challenges, encompassing 
 
 ## About Device
 A standalone device with dedicated software designed as an interactive game for children and adults to enhance their lung capacity, especially those suffering from respiratory issues.
-![Device Image](images/Device.png)
-![Device Image](images/HighLevelDesign.png)
+![Device Image](media/Device.png)
+![Device Image](media/HighLevelDesign.png)
 
 ## Arduino Code (Lung_Capacity_Enhancer)
 This folder contains the Arduino code for the Lung Capacity Enhancer device.
