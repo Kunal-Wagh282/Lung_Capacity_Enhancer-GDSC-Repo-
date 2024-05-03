@@ -6,7 +6,7 @@
 
 
 <br><br>
-***This project consists of an Flutter Application code, Arduino code and a web application with separate frontend and backend for the Lung Capacity Enhancer device along with the URL provided to the deployed website.***
+***This project consists of an Flutter Application code, Arduino code and a web application with separate frontend and backend for the Lung Capacity Enhancer device along with the android APK and the URL provided to the deployed website.***
 ## Table of Contents
 - [Problem Statement](#problem-statement)
 - [About Device](#about-device)
