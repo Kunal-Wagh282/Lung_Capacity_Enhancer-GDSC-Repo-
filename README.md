@@ -62,7 +62,7 @@ This folder contains the frontend code for the Lung Capacity Enhancer web applic
 
 #### History Page
 - **View Past Data**: Users can view past history data in the form of graphs.
-  ![Device Image](media/History.png)
+  ![Device Image](media/History_page.png)
 
 #### Analysis Page
 - **Generate Analysis**: Users can select a range of dates and view analysis reports.
