@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useLocation, useNavigate, Link } from 'react-router-dom';
-
 import API_URL from './config'; // Import the API URL
 import PopupMessage from './Components/PopupMessage';
 import Sidebar from './Components/SideBar'; // Import your modal component
@@ -93,7 +91,7 @@ function GenerateAnalysis() {
     const nowName = JSON.parse(sessionStorage.getItem('nowName'));
     try {
         setLoading(true);
-        const response = await axios.post(`${API_URL}/generate-report/`, {
+        const response = await axios.post(`${API_URL}/generate-analysis/`, {
             u_id: userData.u_id,
             p_name: nowName,
             from_date: fromdate,

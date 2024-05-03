@@ -63,8 +63,8 @@ const connectToDevice = async () => {
       setCharacteristic(characteristic);
       await characteristic.startNotifications();
       characteristic.addEventListener('characteristicvaluechanged', handleCharacteristicValueChanged);
-      if(age<10){var data=String('0'+age);}
-      else{var data = String(age);}
+      if(selectedProfileAge<10){var data=String('0'+selectedProfileAge);}
+      else{var data = String(selectedProfileAge);}
       //console.log(data);
       await characteristic.writeValue(new TextEncoder().encode(data));
       
