@@ -1,6 +1,6 @@
 # Lung Capacity Enhancer
 
-## Watch the video!
+## Watch the GDSC challenge video!
 [![Watch the video](media/preview.png)](https://youtu.be/HmlENw9kQTE)
 
 
