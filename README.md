@@ -76,6 +76,7 @@ This folder contains the frontend code for the Lung Capacity Enhancer web applic
 
 #### Analysis Page
 - **Generate Analysis**: Users can select a range of dates and view analysis reports.
+ ![Device Image](media/Analysis.png)
 
 
 ### Prerequisites
