@@ -11,7 +11,9 @@ This project consists of an Arduino code for the Lung Capacity Enhancer device a
   - [Frontend](#frontend)
   - [Backend](#backend)
 - [Usage](#usage)
-
+  - [Lung Capacity Enhancer Device](#lung-capacity-enhancer-device)
+  - [Web Application](#web-application)
+  - [Examples](#examples)
 
 ## Problem Statement
 In India, pediatric respiratory care poses significant challenges, encompassing healthcare, emotional well-being, and practical considerations, and these challenges have intensified further following the COVID-19 pandemic. Traditional methods lack sufficient user engagement, often resulting in non-compliance among young patients facing respiratory challenges. The current landscape also faces issues of cost-effectiveness, hindering widespread access to effective treatment. Hygiene concerns in healthcare settings further amplify the need for innovative solutions that prioritize cleanliness and portability. Emotional support for pediatric patients during respiratory treatments is often overlooked. Considering these multifaceted challenges, there is a pressing need for a comprehensive and user-centric solution that not only addresses clinical efficacy but also factors in cost-effectiveness, hygiene standards, and emotional well-being. A portable device that combines sensor technology, gamification for enhanced user engagement, cost-effective components, and a focus on hygiene would significantly contribute to overcoming the existing barriers in pediatric respiratory care in India.
@@ -134,12 +136,31 @@ This is a Django-based backend API that provides various functionalities such as
 - `POST /api/del-profile/`: Delete a profile for a user.
 - `POST /api/graph-data/`: Save graph data for a user's profile.
 - `POST /api/get-graph-data/`: Retrieve graph data for a user's profile on a specific date.
-- `POST /api/generate-report/`: Generate a report containing graph data for a user's profile within a specified date range.
-
-
-
+- `POST /api/generate-analysis/`: Generate a analysis graph for a user's profile within a specified date range.
 
 
 ## Usage
 Provide examples and usage instructions for the Lung Capacity Enhancer device and the web application.
+
+### Lung Capacity Enhancer Device
+
+1. **Setup Device**
+   - Connect the Lung Capacity Enhancer device to a power source.
+   - Turn on the device using the power button.
+
+2. **Connect Device to Web Application**
+   - Open the web application on your computer or mobile device.
+   - Go to the Dashboard.
+   - Click on the "Bluetooth Connection" button to establish a Bluetooth connection with the device.
+
+3. **Start Lung Capacity Enhancement**
+   - Instruct the user to blow into the device as hard as possible for the duration of the game.
+   - The user's lung capacity will be measured and displayed in real-time on the web application.
+
+4. **View History and Analysis**
+   - Users can view past history data
+
+## Deployed Website URL
+
+[Access Lung Capacity Enhancer Website](http://your-deployed-website-url.com)
 
