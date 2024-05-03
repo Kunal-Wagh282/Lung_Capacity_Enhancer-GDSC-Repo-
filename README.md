@@ -18,7 +18,7 @@ This project consists of an Arduino code for the Lung Capacity Enhancer device a
 - [Usage](#usage)
   - [Lung Capacity Enhancer Device](#lung-capacity-enhancer-device)
 - [Deployed Website URL](#deployed-website-url)
-- [Download APK] (#download-apk)
+- [Download APK](#download-apk)
 
 ## Problem Statement
 In India, pediatric respiratory care poses significant challenges, encompassing healthcare, emotional well-being, and practical considerations, and these challenges have intensified further following the COVID-19 pandemic. Traditional methods lack sufficient user engagement, often resulting in non-compliance among young patients facing respiratory challenges. The current landscape also faces issues of cost-effectiveness, hindering widespread access to effective treatment. Hygiene concerns in healthcare settings further amplify the need for innovative solutions that prioritize cleanliness and portability. Emotional support for pediatric patients during respiratory treatments is often overlooked. Considering these multifaceted challenges, there is a pressing need for a comprehensive and user-centric solution that not only addresses clinical efficacy but also factors in cost-effectiveness, hygiene standards, and emotional well-being. A portable device that combines sensor technology, gamification for enhanced user engagement, cost-effective components, and a focus on hygiene would significantly contribute to overcoming the existing barriers in pediatric respiratory care in India.
