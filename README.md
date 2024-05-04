@@ -1,5 +1,10 @@
 # Lung Capacity Enhancer
 
+
+## Watch the GDSC challenge Global top 100 video!
+[![Watch the video](media/preview1.png)](https://www.youtube.com/watch?v=uym5mRC0Sjs)
+
+
 ## Watch the GDSC challenge video!
 [![Watch the video](media/preview.png)](https://youtu.be/HmlENw9kQTE)
 
