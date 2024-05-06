@@ -178,6 +178,24 @@ This is a Django-based backend API that provides various functionalities such as
 
 4. **View History and Analysis**
    - Users can view past history data
+  
+### Example Login
+
+To log in and test the features of the Lung Capacity Enhancer web application, follow these steps:
+
+1. Open the web application on your computer or mobile device.
+2. Navigate to the Login page.
+3. Enter the following credentials:
+   - **Username:** `Kunal`
+   - **Password:** `12345`
+4. Click on the "Login" button to log in.
+
+After logging in, you can explore the various features of the application using the provided example profile and dates:
+
+- **Profile:** `kunal`
+- **Dates:** May 3, 2024, and May 4, 2024
+
+Feel free to try out the registration, profile management, viewing past data, and generating analysis reports using the provided credentials and dates.
 
 
 
