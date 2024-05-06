@@ -179,7 +179,7 @@ This is a Django-based backend API that provides various functionalities such as
 4. **View History and Analysis**
    - Users can view past history data
   
-### Example Login
+## Example Login
 
 To log in and test the features of the Lung Capacity Enhancer web application, follow these steps:
 
